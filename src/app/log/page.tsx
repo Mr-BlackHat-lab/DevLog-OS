@@ -1,8 +1,9 @@
+import '@/styles/page.css'
 
 export default function LogPage(){
     return(
-        <main style={{padding:"2rem"}}>
-            <h1 style={{ color: "var(--blue)" }}>Dev Logs</h1>
+        <main className="page">
+            <h1>Dev Logs</h1>
             <p>Daily notes, mistakeas and breakthroughs.</p>
         </main>
     )

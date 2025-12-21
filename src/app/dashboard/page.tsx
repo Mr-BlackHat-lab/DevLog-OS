@@ -1,7 +1,9 @@
+import '@/styles/page.css'
+
 export default function DashboardPage(){
     return(
-        <main style={{padding:"2rem"}}>
-            <h1 style={{ color: "var(--blue)" }}>Dashboard</h1>
+        <main className="page">
+            <h1>Dashboard</h1>
             <p>Your stats. Your Streaks. Your Reality</p>
         </main>
     )
