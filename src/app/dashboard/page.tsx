@@ -1,5 +1,8 @@
-export default function Dashboard(){
+export default function DashboardPage(){
     return(
-        <main>Dashboard</main>
+        <main style={{padding:"2rem"}}>
+            <h1 style={{ color: "var(--blue)" }}>Dashboard</h1>
+            <p>Your stats. Your Streaks. Your Reality</p>
+        </main>
     )
 }
