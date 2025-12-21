@@ -1,0 +1,27 @@
+.log-list{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+.log-card{
+    background: var(--surface0);
+    border: 1px solid var(--surface1);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+}
+.log-card h3 {
+  color: var(--blue);
+  margin-bottom: 0.25rem;
+}
+
+.log-meta {
+  font-size: 0.8rem;
+  color: var(--overlay1);
+  margin-bottom: 0.75rem;
+}
+
+.log-content {
+  color: var(--subtext1);
+  white-space: pre-wrap;
+}
