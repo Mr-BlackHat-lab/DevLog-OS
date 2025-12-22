@@ -22,5 +22,5 @@ export async function POST(req: Request) {
     content: body.content,
     mood: body.mood,
   });
-  return NextResponse.json(log, {status: 201})
+  return NextResponse.json(log, { status: 201 });
 }
