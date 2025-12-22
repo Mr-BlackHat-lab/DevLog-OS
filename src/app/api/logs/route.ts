@@ -2,14 +2,29 @@ import { NextResponse } from "next/server";
 import { ConnectDB } from "@/lib/mongodb";
 import { DevLog } from "@/models/DevLogs";
 
-export async function GET() {
+export async function GET(req: Request) {
   await ConnectDB();
 
+  const {searchParams}= new URL(req.url);
+  const q = searchParams.get("q");
+  const mood = searchParams.get("mood");
+
+  const query: any = {};
+
+  if (q){
+    query.$or = [
+      {title: {$regex: q, $options: "i"}},
+      {content: {$regex: q, $options: "i"}},
+    ];
+  };
+
+  if (mood){
+    query.mood = mood;
+  }
   // return NextResponse.json(
   //     {message: "Log api is working"},
   // )
-  const logs = await DevLog.find().sort({ createdAt: -1 });
-
+  const logs = await DevLog.find(query).sort({ createdAt: -1 });
   return NextResponse.json(logs);
 }
 export async function POST(req: Request) {
