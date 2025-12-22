@@ -25,3 +25,23 @@
   color: var(--subtext1);
   white-space: pre-wrap;
 }
+
+.log-actions{
+  margin-top: 0.75rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.delete-btn{
+  background: transparent;
+  border: 1px solid var(--red);
+  color: var(--red);
+  padding: 0.35rem 0.6rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-size: 0.85rem  ;
+}
+.delete-btn:hover{
+  background: var(--red);
+  color: var(--base);
+}

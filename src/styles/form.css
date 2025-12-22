@@ -41,3 +41,16 @@
     opacity: 0.6;
     cursor: not-allowed;
 }
+.edit-link{
+    text-decoration: none;
+    background: var(--blue);
+    color: var(--base);
+    padding: 0.4rem 0.8rem;
+    border-radius: var(--radius);
+    border: 3px solid var(--surface1);
+    font-size: 0.85rem;
+    margin: 0.3rem 0.6rem;
+}
+.edit-link:hover{
+    border: 3px solid var(--surface2);
+}

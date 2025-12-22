@@ -9,11 +9,13 @@ import '@/styles/markdown.css'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm';
 import rehypeHighlight from 'rehype-highlight';
-import { Content } from 'next/font/google';
+import { revalidatePath } from 'next/cache';
 
+
+// making it globall so it can be used in delete
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
 
 async function getLogs() {
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
     const res = await fetch(`${baseUrl}/api/logs`);
 
     if (!res.ok) {
@@ -31,8 +33,8 @@ export default async function LogsPage() {
     return (
         <main className="page">
             <h1>Dev Logs</h1>
-
-            <LogForm/>
+            {/* log form here  */}
+            <LogForm />
             {logs.length === 0 && (
                 <p>No log yet. Start documenting your chaso</p>
             )}
@@ -50,6 +52,22 @@ export default async function LogsPage() {
                             >
                                 {log.content}
                             </ReactMarkdown>
+                        </div>
+                        <div className="log-actions">
+                            <form action={async () => {
+                                "use server";
+                                await fetch(`${baseUrl}/api/logs`, {
+                                    method: "DELETE",
+                                    headers: { "Content-Type": "application/json" },
+                                    body: JSON.stringify({ id: log._id })
+                                });
+                                revalidatePath("/logs")
+                            }}>
+                                <button className='delete-btn'>Delete</button>
+                                <a href={`logs/${log._id}`} className='edit-link'>
+                                    Edit
+                                </a>
+                            </form>
                         </div>
                     </div>
                 ))}

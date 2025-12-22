@@ -24,3 +24,12 @@ export async function POST(req: Request) {
   });
   return NextResponse.json(log, { status: 201 });
 }
+export async function DELETE(req: Request){
+  await ConnectDB();
+
+  const {id} = await req.json();
+
+  await DevLog.findByIdAndDelete(id);
+
+  return NextResponse.json({success: true});
+}
