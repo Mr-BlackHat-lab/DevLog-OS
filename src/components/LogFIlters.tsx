@@ -1,23 +1,30 @@
 "use client"
 
 import { useRouter, useSearchParams } from "next/navigation"
-import { useState } from "react"
+import { useState, useTransition, useEffect } from "react"
 
 export default function LogFilters() {
     const router = useRouter();
     const searchParmas = useSearchParams();
+    const [isPending, startTransition] = useTransition();
 
     const [q, setQ] = useState(searchParmas.get('q') || "");
     const [mood, setMood] = useState(searchParmas.get('mood') || "all");
 
-    function applyFilters() {
-        const params = new URLSearchParams();
+    useEffect(() => {
+        const timeout = setTimeout(() => {
+            const params = new URLSearchParams();
 
-        if (q) params.set("q", q);
-        if (mood !== "all") params.set("mood", mood);
 
-        router.push(`/logs?${params.toString()}`);
-    }
+            if (q) params.set("q", q);
+            if (mood !== "all") params.set("mood", mood);
+
+            startTransition(() => {
+                router.replace(`/logs/?${params.toString()}`)
+            });
+        }, 300);
+        return()=> clearTimeout(timeout);
+    }, [q, mood]);
     return (
         <div className="log-filters">
             <input
@@ -31,7 +38,7 @@ export default function LogFilters() {
                 <option value="meh">meh</option>
                 <option value="bad">bad</option>
             </select>
-            <button onClick={applyFilters}>Apply</button>
+            {isPending && <span className="loading">Filtering...</span>}
         </div>
     )
 }

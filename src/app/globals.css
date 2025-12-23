@@ -2,7 +2,8 @@
    Catppuccin Theme Palettes
    https://catppuccin.com
    ========================= */
-:root {/*By Defaul root is Mocha*/ /* Catppuccin Mocha  */
+:root {
+  /*By Defaul root is Mocha*/ /* Catppuccin Mocha  */
   --rosewater: #f5e0dc;
   --flamingo: #f2cdcd;
   --pink: #f5c2e7;
@@ -33,6 +34,12 @@
   --base: #1e1e2e;
   --mantle: #181825;
   --crust: #11111b;
+
+  --primary: var(--blue);
+  --primary-soft: var(--sky);
+  --danger: var(--red);
+  --success: var(--green);
+  --warning: var(--peach);
 
   --radius: 10px;
 }
@@ -68,6 +75,14 @@
   --base: #eff1f5;
   --mantle: #e6e9ef;
   --crust: #dce0e8;
+
+  --primary: var(--blue);
+  --primary-soft: var(--sky);
+  --danger: var(--red);
+  --success: var(--green);
+  --warning: var(--peach);
+
+  --radius: 10px;
 }
 
 /* ---------- Frappé ---------- */
@@ -102,6 +117,14 @@
   --base: #303446;
   --mantle: #292c3c;
   --crust: #232634;
+
+  --primary: var(--blue);
+  --primary-soft: var(--sky);
+  --danger: var(--red);
+  --success: var(--green);
+  --warning: var(--peach);
+
+  --radius: 10px;
 }
 
 /* ---------- Macchiato ---------- */
@@ -136,6 +159,14 @@
   --base: #24273a;
   --mantle: #1e2030;
   --crust: #181926;
+
+  --primary: var(--blue);
+  --primary-soft: var(--sky);
+  --danger: var(--red);
+  --success: var(--green);
+  --warning: var(--peach);
+
+  --radius: 10px;
 }
 
 * {
@@ -143,7 +174,7 @@
   margin: 0;
   padding: 0;
 }
-body{
+body {
   background-color: var(--base);
   color: var(--text);
   font-family: system-ui, sans-serif;
