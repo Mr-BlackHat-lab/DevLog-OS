@@ -11,7 +11,7 @@
     padding: 1.25rem;
 }
 .log-card h3 {
-  color: var(--blue);
+  color: var(--primary);
   margin-bottom: 0.25rem;
 }
 
@@ -53,20 +53,15 @@
 }
 .delete-btn{
   background: transparent;
-  border: 1px solid var(--red);
-  color: var(--red);
+  border: 1px solid var(--danger);
+  color: var(--danger);
   padding: 0.35rem 0.6rem;
   border-radius: var(--radius);
   cursor: pointer;
   font-size: 0.85rem  ;
 }
 .delete-btn:hover{
-  background: var(--red);
+  background: var(--danger);
   color: var(--base);
 }
-mark {
-  background: var(--yellow);
-  color: var(--base);
-  padding: 0 0.2rem;
-  border-radius: 3px;
-}
+
