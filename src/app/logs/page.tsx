@@ -1,6 +1,8 @@
+// ui componets
 import LogForm from '@/components/LogForm';
 import LogFilters from '@/components/LogFIlters';
 
+// styles css
 import '@/styles/form.css'
 import '@/styles/page.css';
 import '@/styles/logs.css';

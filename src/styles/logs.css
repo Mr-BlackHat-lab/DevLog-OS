@@ -64,3 +64,9 @@
   background: var(--red);
   color: var(--base);
 }
+mark {
+  background: var(--yellow);
+  color: var(--base);
+  padding: 0 0.2rem;
+  border-radius: 3px;
+}
