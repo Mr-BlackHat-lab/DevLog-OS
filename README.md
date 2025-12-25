@@ -107,9 +107,9 @@ We have comprehensive guides to help you:
 
 | Guide                              | Purpose                            | Time    |
 | ---------------------------------- | ---------------------------------- | ------- |
-| **[QUICKSTART.md](QUICKSTART.md)** | Get started in 5 minutes           | 5 mins  |
-| **[STRUCTURE.md](STRUCTURE.md)**   | Understand the architecture        | 20 mins |
-| **[CHANGELOG.md](CHANGELOG.md)**   | See what changed (with AI history) | 10 mins |
+| **[QUICKSTART.md](docs/QUICKSTART.md)** | Get started in 5 minutes           | 5 mins  |
+| **[STRUCTURE.md](docs/STRUCTURE.md)**   | Understand the architecture        | 20 mins |
+| **[CHANGELOG.md](docs/CHANGELOG.md)**   | See what changed (with AI history) | 10 mins |
 
 ### Learning Path
 
@@ -147,7 +147,7 @@ src/
 └── proxy.ts           ← Route protection
 ```
 
-See [STRUCTURE.md](STRUCTURE.md) for detailed architecture explanation.
+See [STRUCTURE.md](docs/STRUCTURE.md) for detailed architecture explanation.
 
 ---
 
@@ -344,7 +344,7 @@ This project underwent a **complete professional restructuring** on December 25,
 - ✅ Server Actions pattern
 - ✅ Comprehensive documentation
 
-**See [CHANGELOG.md](CHANGELOG.md)** for the complete rebase history with session-by-session breakdown!
+**See [CHANGELOG.md](docs/CHANGELOG.md)** for the complete rebase history with session-by-session breakdown!
 
 ### Lessons Learned
 
@@ -380,9 +380,9 @@ This project is licensed under the MIT License - see [LICENSE](LICENSE) file for
 
 ### Need Help?
 
-1. Check [QUICKSTART.md](QUICKSTART.md) for quick answers
-2. Read [STRUCTURE.md](STRUCTURE.md) for detailed guides
-3. Review [CHANGELOG.md](CHANGELOG.md) for development history
+1. Check [QUICKSTART.md](docs/QUICKSTART.md) for quick answers
+2. Read [STRUCTURE.md](docs/STRUCTURE.md) for detailed guides
+3. Review [CHANGELOG.md](docs/CHANGELOG.md) for development history
 4. Open an issue on GitHub
 
 ### Have Ideas?
