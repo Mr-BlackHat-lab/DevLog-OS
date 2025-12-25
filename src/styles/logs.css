@@ -65,3 +65,23 @@
   color: var(--base);
 }
 
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.pagination button {
+  background: var(--surface);
+  border: 1px solid var(--overlay);
+  color: var(--text);
+  padding: 0.4rem 0.7rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+.pagination button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}

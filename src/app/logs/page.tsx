@@ -1,6 +1,7 @@
 // ui componets
 import LogForm from '@/components/LogForm';
 import LogFilters from '@/components/LogFIlters';
+import Pagination from '@/components/Pagination';
 
 // styles css
 import '@/styles/form.css'
@@ -21,10 +22,12 @@ const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
 async function getLogs(searchParams: {
     q?: string;
     mood?: string;
+    page?: string;
 }) {
     const params = new URLSearchParams();
     if (searchParams.q) params.set("q", searchParams.q);
     if (searchParams.mood) params.set("mood", searchParams.mood);
+    if (searchParams.page) params.set("page", searchParams.page);
 
     const res = await fetch(`${baseUrl}/api/logs?${params.toString()}`, {
         cache: "no-store"
@@ -44,10 +47,13 @@ export default async function LogsPage({
     searchParams: Promise<{
         q?: string;
         mood?: string;
+        page?: string;
     }>
 }) {
     const params = await searchParams;
-    const logs = await getLogs(params);
+    const data = await getLogs(params);
+
+    const { logs, page, totalPages } = data;
 
     return (
         <main className="page">
@@ -93,7 +99,7 @@ export default async function LogsPage({
                         </div>
                     </div>
                 ))}
+                <Pagination page={page} totalPages={totalPages} />
             </div>
-        </main>
-    )
+        </main>)
 }
