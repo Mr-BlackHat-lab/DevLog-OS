@@ -1,14 +1,14 @@
-.log-list{
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    margin-top: 1.5rem;
+.log-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.5rem;
 }
-.log-card{
-    background: var(--surface0);
-    border: 1px solid var(--surface1);
-    border-radius: var(--radius);
-    padding: 1.25rem;
+.log-card {
+  background: var(--surface0);
+  border: 1px solid var(--surface1);
+  border-radius: var(--radius);
+  padding: 1.25rem;
 }
 .log-card h3 {
   color: var(--primary);
@@ -26,41 +26,66 @@
   white-space: pre-wrap;
 }
 
-.log-actions{
+.log-actions {
   margin-top: 0.75rem;
   display: flex;
   justify-content: flex-end;
 }
-.log-filters{
+
+.log-add {
+  margin: 12px 0 20px;
+}
+
+.add-log-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 14px;
+  border-radius: var(--radius);
+  background: var(--primary);
+  color: var(--base);
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.add-log-link:hover {
+  background: var(--primary-soft);
+}
+
+.add-log-link:active {
+  transform: translateY(1px);
+}
+.log-filters {
   display: flex;
   gap: 0.75rem;
   margin-bottom: 1.25rem;
 }
 .log-filters input,
-.log-filters select{
+.log-filters select {
   background: var(--surface0);
   border: 1px solid var(--overlay0);
   color: var(--text);
   padding: 0.45rem 0.6rem;
   border-radius: var(--radius);
 }
-.log-filters button{
+.log-filters button {
   background: var(--mauve);
   color: var(--base);
   border-radius: var(--radius);
   padding: 0.45rem 0.8rem;
   font-size: 0.9rem;
 }
-.delete-btn{
+.delete-btn {
   background: transparent;
   border: 1px solid var(--danger);
   color: var(--danger);
   padding: 0.35rem 0.6rem;
   border-radius: var(--radius);
   cursor: pointer;
-  font-size: 0.85rem  ;
+  font-size: 0.85rem;
 }
-.delete-btn:hover{
+.delete-btn:hover {
   background: var(--danger);
   color: var(--base);
 }

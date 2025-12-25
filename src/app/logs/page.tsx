@@ -1,5 +1,4 @@
-// ui componets
-import LogForm from '@/components/LogForm';
+// ui components
 import LogFilters from '@/components/LogFIlters';
 import Pagination from '@/components/Pagination';
 
@@ -58,8 +57,9 @@ export default async function LogsPage({
     return (
         <main className="page">
             <h1>Dev Logs</h1>
-            {/* log form here  */}
-            <LogForm />
+            <div className="log-add">
+                <a href="/logs/new" className="add-log-link">+ Add Log</a>
+            </div>
             {logs.length === 0 && (
                 <p>No log yet. Start documenting your chaso</p>
             )}

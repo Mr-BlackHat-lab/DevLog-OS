@@ -2,11 +2,12 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation"
+import { MOOD_OPTIONS } from "@/config/constants";
 
 export default function LogForm() {
     const [title, setTitle] = useState("");
     const [content, setContent] = useState("");
-    const [mood, setMood] = useState("meh");
+    const [mood, setMood] = useState(MOOD_OPTIONS[0]?.value ?? "productive");
     const [loading, setLoading] = useState(false)
     const router = useRouter();
 
@@ -29,7 +30,7 @@ export default function LogForm() {
 
         setTitle("");
         setContent("");
-        setMood("meh");
+        setMood(MOOD_OPTIONS[0]?.value ?? "productive");
         setLoading(false);
 
 
@@ -53,9 +54,11 @@ export default function LogForm() {
                 value={mood}
                 onChange={(e) => setMood(e.target.value)}
             >
-                <option value="meh" className="options-list">meh</option>
-                <option value="good" className="options-list">good</option>
-                <option value="bad" className="options-list">bad</option>
+                {MOOD_OPTIONS.map((option) => (
+                    <option key={option.value} value={option.value} className="options-list">
+                        {option.label}
+                    </option>
+                ))}
             </select>
             <button disabled={loading || !title || !content}>
                 {loading ? "Saving..." : "Add Log"}
