@@ -10,9 +10,19 @@
   border-radius: var(--radius);
   padding: 1.25rem;
 }
+
+.log-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
 .log-card h3 {
   color: var(--primary);
-  margin-bottom: 0.25rem;
+  margin: 0;
+  flex: 1;
 }
 
 .log-meta {
@@ -58,23 +68,85 @@
 }
 .log-filters {
   display: flex;
-  gap: 0.75rem;
-  margin-bottom: 1.25rem;
-}
-.log-filters input,
-.log-filters select {
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
   background: var(--surface0);
-  border: 1px solid var(--overlay0);
-  color: var(--text);
-  padding: 0.45rem 0.6rem;
+  border: 1px solid var(--surface1);
   border-radius: var(--radius);
 }
-.log-filters button {
-  background: var(--mauve);
-  color: var(--base);
+
+.filter-search {
+  flex: 1;
+}
+
+.filter-input {
+  width: 100%;
+  background: var(--surface1);
+  border: 1px solid var(--surface2);
+  color: var(--text);
+  padding: 0.6rem 0.8rem;
   border-radius: var(--radius);
-  padding: 0.45rem 0.8rem;
+  font-size: 0.95rem;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.filter-input:focus {
+  outline: none;
+  border-color: var(--primary);
+  background: var(--base);
+}
+
+.filter-input::placeholder {
+  color: var(--subtext0);
+}
+
+.filter-mood {
+  min-width: 180px;
+}
+
+.filter-select {
+  width: 100%;
+  background: var(--surface1);
+  border: 1px solid var(--surface2);
+  color: var(--text);
+  padding: 0.6rem 0.8rem;
+  border-radius: var(--radius);
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.filter-select:focus {
+  outline: none;
+  border-color: var(--primary);
+  background: var(--base);
+}
+
+.filter-select option {
+  background: var(--base);
+  color: var(--text);
+}
+
+.filter-loading {
+  color: var(--primary);
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   font-size: 0.9rem;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
 }
 .delete-btn {
   background: transparent;

@@ -2,6 +2,7 @@
 
 import { useRouter, useSearchParams } from "next/navigation"
 import { useState, useTransition, useEffect } from "react"
+import { MOOD_OPTIONS } from "@/config/constants"
 
 export default function LogFilters() {
     const router = useRouter();
@@ -15,7 +16,6 @@ export default function LogFilters() {
         const timeout = setTimeout(() => {
             const params = new URLSearchParams();
 
-
             if (q) params.set("q", q);
             if (mood !== "all") params.set("mood", mood);
 
@@ -23,22 +23,36 @@ export default function LogFilters() {
                 router.replace(`/logs/?${params.toString()}`)
             });
         }, 300);
-        return()=> clearTimeout(timeout);
+        return () => clearTimeout(timeout);
     }, [q, mood]);
+
     return (
         <div className="log-filters">
-            <input
-                placeholder="Search log..."
-                value={q}
-                onChange={(e) => setQ(e.target.value)}
-            />
-            <select value={mood} onChange={(e) => setMood(e.target.value)} >
-                <option value="all">all</option>
-                <option value="good">good</option>
-                <option value="meh">meh</option>
-                <option value="bad">bad</option>
-            </select>
-            {isPending && <span className="loading">Filtering...</span>}
+            <div className="filter-search">
+                <input
+                    className="filter-input"
+                    placeholder="🔍 Search logs..."
+                    value={q}
+                    onChange={(e) => setQ(e.target.value)}
+                />
+            </div>
+
+            <div className="filter-mood">
+                <select
+                    className="filter-select"
+                    value={mood}
+                    onChange={(e) => setMood(e.target.value)}
+                >
+                    <option value="all">All Moods</option>
+                    {MOOD_OPTIONS.map((option) => (
+                        <option key={option.value} value={option.value}>
+                            {option.label}
+                        </option>
+                    ))}
+                </select>
+            </div>
+
+            {isPending && <span className="filter-loading">⏳ Filtering...</span>}
         </div>
     )
 }

@@ -1,4 +1,4 @@
-// ui components
+import LogForm from '@/components/LogForm';
 import LogFilters from '@/components/LogFIlters';
 import Pagination from '@/components/Pagination';
 
@@ -6,6 +6,7 @@ import Pagination from '@/components/Pagination';
 import '@/styles/form.css'
 import '@/styles/page.css';
 import '@/styles/logs.css';
+import '@/styles/mood.css';
 import '@/styles/markdown.css'
 
 // import of markdown concept
@@ -13,6 +14,7 @@ import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm';
 import rehypeHighlight from 'rehype-highlight';
 import { revalidatePath } from 'next/cache';
+import { MOOD_OPTIONS } from '@/config/constants';
 
 
 // making it globall so it can be used in delete
@@ -69,9 +71,14 @@ export default async function LogsPage({
                 <LogFilters />
                 {logs.map((log: any) => (
                     <div key={log._id} className='log-card' >
-                        <h3>{log.title}</h3>
+                        <div className="log-header">
+                            <h3>{log.title}</h3>
+                            <span className={`mood-badge ${log.mood}`}>
+                                {MOOD_OPTIONS.find(m => m.value === log.mood)?.label || log.mood}
+                            </span>
+                        </div>
                         <div className="log-meta">
-                            {new Date(log.createdAt).toLocaleString()}.{log.mood}
+                            {new Date(log.createdAt).toLocaleString()}
                         </div>
                         <div className="log-content markdown">
                             <ReactMarkdown

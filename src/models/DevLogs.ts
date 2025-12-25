@@ -13,7 +13,14 @@ const DevLogSchema = new Schema(
     },
     mood: {
       type: String,
-      enum: ["good", "meh", "bad"],
+      enum: [
+        "productive",
+        "learning",
+        "struggling",
+        "breakthrough",
+        "reflecting",
+      ],
+      default: "productive",
       required: true,
     },
   },
