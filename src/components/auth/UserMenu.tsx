@@ -1,5 +1,4 @@
 import { getCurrentUser } from "@/lib/auth.utils";
-import SignOutButton from "./SignOutButton";
 import Link from "next/link";
 
 export default async function UserMenu() {
@@ -25,7 +24,9 @@ export default async function UserMenu() {
                 )}
                 <span className="user-name">{user.name || user.email}</span>
             </div>
-            <SignOutButton />
+            <Link href="/settings" className="nav-link">
+                Settings
+            </Link>
         </div>
     );
 }
