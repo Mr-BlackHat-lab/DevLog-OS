@@ -1,35 +1,48 @@
-.navbar{
-    height: 64px;
-    padding: 0 2rem;
-    background: var(--mantle);
-    border-bottom: 1px solid var(--surface0);
+.navbar {
+  height: 64px;
+  padding: 0 2rem;
+  background: var(--mantle);
+  border-bottom: 1px solid var(--surface0);
 
-    display: flex;
-    align-items:  center;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
-.navbar-right{
-    display: flex;
-    align-items: center;
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
 }
-.navbar-logo{
-    font-weight: 600;
-    font-size: 1.1rem;
-    color: var(--mauve);
+
+.navbar-logo {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--mauve);
 }
-.navbar-link{
-    display: flex;
-    list-style: none;
-    gap: 1.5rem;
+
+.navbar-link {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
 }
-.navbar-link a{
-    text-decoration: none;
-    color: var(--text);
-    font-size: 0.95rem;
+
+.navbar-link a {
+  text-decoration: none;
+  color: var(--text);
+  font-size: 0.95rem;
 }
-.navbar-link a:hover{
-    color: var(--lavender)
+
+.navbar-link a:hover {
+  color: var(--lavender);
 }
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
 .theme-dropdown {
   background-color: var(--surface0);
   color: var(--text);
@@ -48,4 +61,131 @@
 .theme-dropdown option {
   background-color: var(--base);
   color: var(--text);
+}
+
+/* User Menu Dropdown */
+.user-menu {
+  position: relative;
+}
+
+.user-menu-trigger {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  border-radius: 50%;
+  transition: opacity 0.2s;
+}
+
+.user-menu-trigger:hover {
+  opacity: 0.8;
+}
+
+.user-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid var(--surface1);
+  object-fit: cover;
+}
+
+.user-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  min-width: 240px;
+  background: var(--surface0);
+  border: 1px solid var(--surface1);
+  border-radius: var(--radius);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.dropdown-header {
+  padding: 12px;
+}
+
+.dropdown-user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dropdown-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid var(--surface1);
+  object-fit: cover;
+}
+
+.dropdown-text {
+  flex: 1;
+  overflow: hidden;
+}
+
+.dropdown-name {
+  font-weight: 600;
+  color: var(--text);
+  margin: 0;
+  font-size: 0.95rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dropdown-email {
+  color: var(--subtext0);
+  margin: 0;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dropdown-divider {
+  height: 1px;
+  background: var(--surface1);
+  margin: 0;
+}
+
+.dropdown-links {
+  padding: 6px 0;
+}
+
+.dropdown-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  color: var(--text);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: background 0.2s;
+}
+
+.dropdown-link:hover {
+  background: var(--surface1);
+}
+
+.dropdown-footer {
+  padding: 6px;
+}
+
+.login-btn {
+  padding: 8px 16px;
+  background: var(--primary);
+  color: var(--base);
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: background 0.2s;
+}
+
+.login-btn:hover {
+  background: var(--primary-soft);
 }

@@ -1,7 +1,7 @@
 # 📋 DevLog OS - Complete Changelog
 
 > **AI-Assisted Rebase to Industry Standards**  
-> December 25, 2025 | Powered by GitHub Copilot (Claude Haiku 4.5)
+> December 25, 2025 | Powered by GitHub Copilot (Claude Sonnet 4.5)
 
 ---
 
@@ -11,13 +11,127 @@ Your DevLog OS project underwent a **complete professional restructuring** with 
 
 ### Impact Summary
 
-- 🔧 **15+ new files created**
-- 📝 **20+ files modified**
-- 🎨 **3-theme system added**
+- 🔧 **20+ new files created**
+- 📝 **30+ files modified**
+- 🎨 **4-theme system added** (Mocha, Macchiato, Frappé, Latte)
 - 🔐 **Authentication completely rewritten**
 - 📚 **Comprehensive documentation added**
 - ✅ **100% type safety achieved**
+- 🎨 **Dropdown user menu implemented**
 - ⚡ **Zero breaking changes**
+
+---
+
+## 📅 Latest Updates (December 25, 2025 - Evening)
+
+### Task: Settings Page Restructure & Style Organization
+
+**Added**:
+
+- ✅ Dedicated CSS file for settings (`settings.css`)
+- ✅ Display name shown as text (not input) on settings page
+- ✅ Edit profile page with proper spacing
+- ✅ Red "Edit" button next to display name
+- ✅ Clean separation of concerns in CSS files
+
+**Files Created**:
+
+- `src/styles/settings.css` - All settings-specific styles
+- `src/app/settings/edit-profile/page.tsx` - Profile editing page
+
+**Files Modified**:
+
+- `src/app/settings/page.tsx` - Uses text display instead of input, imports settings.css
+- `src/app/settings/edit-profile/page.tsx` - Better header spacing
+- `src/styles/page.css` - Removed settings styles, added `.page-header`
+- `src/styles/settings.css` - Organized sections with comments
+
+**Result**: ✅ Clean, maintainable settings UI with proper separation of styles
+
+---
+
+### Task: User Settings & Dropdown Menu
+
+**Added**:
+
+- ✅ User settings page (`/settings`)
+- ✅ Dropdown menu on user avatar click
+- ✅ Moved sign-out to settings page
+- ✅ Display name field with edit functionality
+- ✅ Improved navbar layout (menu items shifted right)
+- ✅ Click-outside-to-close dropdown functionality
+
+**Files Created**:
+
+- `src/app/settings/page.tsx` - User settings page
+- `src/components/auth/UserMenuClient.tsx` - Dropdown menu component
+
+**Files Modified**:
+
+- `src/components/auth/UserMenu.tsx` - Now wraps client component
+- `src/components/Navbar.tsx` - Navbar layout restructured
+- `src/styles/navbar.css` - Dropdown styles added
+
+**Result**: ✅ Professional dropdown menu with user info, settings link, and sign-out
+
+---
+
+### Task: Dedicated Log Creation Page
+
+**Added**:
+
+- ✅ New route `/logs/new` for adding logs
+- ✅ "+ Add Log" button on logs page
+- ✅ Updated LogForm to use MOOD_OPTIONS constants
+- ✅ Five mood options: Productive 🚀, Learning 📚, Struggling 😓, Breakthrough 💡, Reflecting 🤔
+
+**Files Created**:
+
+- `src/app/logs/new/page.tsx` - Dedicated log creation page
+
+**Files Modified**:
+
+- `src/app/logs/page.tsx` - Removed inline form, added link
+- `src/components/LogForm.tsx` - Uses MOOD_OPTIONS from constants
+- `src/styles/logs.css` - Add log button styles
+
+**Result**: ✅ Clean separation - browse logs vs. create new log
+
+---
+
+### Task: Theme System Fixes
+
+**Fixed**:
+
+- ✅ Theme persistence across page navigation
+- ✅ Hydration warning resolved (suppressHydrationWarning)
+- ✅ All 4 Catppuccin themes working (Mocha, Macchiato, Frappé, Latte)
+- ✅ Theme dropdown syncs correctly on page load
+
+**Files Modified**:
+
+- `public/theme-init.js` - Enhanced theme restoration logic
+- `src/app/layout.tsx` - Added suppressHydrationWarning
+- `README.md` - Updated to list 4 themes
+- `docs/STRUCTURE.md` - Updated theme count
+
+**Result**: ✅ Seamless theme switching without errors
+
+---
+
+### Task: Documentation Organization
+
+**Added**:
+
+- ✅ Created `/docs` folder for all markdown documentation
+- ✅ Moved STRUCTURE.md, QUICKSTART.md, CHANGELOG.md to docs/
+- ✅ Updated all documentation links in README.md
+
+**Files Modified**:
+
+- `README.md` - All doc links now point to `docs/` folder
+
+**Result**: ✅ Cleaner project root, organized documentation
 
 ---
 

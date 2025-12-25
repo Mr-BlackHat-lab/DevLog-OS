@@ -1,0 +1,100 @@
+/* ========================
+   Settings Page Styles
+   ======================== */
+
+.settings-page {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Settings Cards */
+.settings-card {
+  background: var(--surface0);
+  border: 1px solid var(--surface1);
+  border-radius: var(--radius);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.settings-card input {
+  background: var(--surface1);
+  border: 1px solid var(--surface2);
+  color: var(--text);
+  padding: 0.6rem;
+  border-radius: var(--radius);
+}
+
+.settings-card input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Settings Rows */
+.settings-row {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.settings-row-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.settings-row label {
+  font-weight: 600;
+}
+
+/* Settings Value Display */
+.settings-value {
+  color: var(--text);
+  font-size: 1rem;
+  margin: 0;
+  padding: 0.4rem 0;
+}
+
+.settings-hint {
+  color: var(--subtext0);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* Edit Link Button */
+.edit-link-small {
+  text-decoration: none;
+  background: var(--red);
+  color: var(--base);
+  padding: 0.3rem 0.7rem;
+  border-radius: var(--radius);
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition: background 0.2s, transform 0.1s;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.edit-link-small:hover {
+  background: var(--maroon);
+  transform: translateY(-1px);
+}
+
+.edit-link-small:active {
+  transform: translateY(0);
+}
+
+/* Settings Page Header */
+.settings-header {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.settings-back-button {
+  align-self: flex-start;
+}

@@ -1,13 +1,23 @@
-.page{
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 2.5rem 2rem;
+.page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem;
 }
-.page h1{
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-    color: var(--mauve);
+
+.page h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--mauve);
 }
-.page p{
-    color: var(--subtext1);
+
+.page p {
+  color: var(--subtext1);
+}
+
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 1.5rem;
 }
